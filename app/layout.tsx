@@ -1,8 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins, Sora } from 'next/font/google'
+import Nav from './components/Nav'
+import Header from './components/Header'
+import Top_Left_Image from './components/Top_Left_Image'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ subsets: ['latin'], variable: '--font-poppins', weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']})
+
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['100', '200', '300', '400', '500', '600', '700', '800']})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`page text-white bg-primary bg-cover bg-no-repeat ${sora.variable} font-sora relative ${poppins.variable} font-poppins`} suppressHydrationWarning={true}>
+        <Top_Left_Image />
+        <Nav />
+        <Header />
+        {children}
+        </body>
     </html>
   )
 }
