@@ -1,6 +1,6 @@
 // import { Container } from 'postcss';
-import { useCallback } from 'react'
-import Particles from "react-tsparticles";
+import React, { useCallback } from 'react'
+import {Particles} from "react-tsparticles";
 import { loadFull } from "tsparticles"; 
 
  const ParticlesContainer = () => {
@@ -21,6 +21,7 @@ const particlesLoaded = useCallback(async (container: any) => {
   return (
     <Particles 
     className="w-full h-full absolute translate-z-0"
+    // w-full h-full absolute translate-z-0
     id="tsparticles" 
     init ={particlesInit} 
     loaded={particlesLoaded}

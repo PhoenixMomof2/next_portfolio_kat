@@ -30,7 +30,7 @@ const config: Config = {
         circleStar: 'url("/circle-star.svg")',
       },
       animation: {
-        'spin-slow': 'spin 6s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, 'sans-serif'],

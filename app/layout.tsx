@@ -20,6 +20,7 @@ export default function RootLayout({
         <Top_Left_Image />
         <Nav />
         <Header />       
+        <TransitionEffect />
             {children}        
         </body>
     </html>
