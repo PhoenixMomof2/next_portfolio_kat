@@ -1,15 +1,9 @@
-import Image from 'next/image'
-import ParticlesContainer from '../components/ParticlesContainer'
-import {motion} from 'framer-motion'
-import { fadeIn } from '../variants'
+import React from 'react'
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className="bg-primary/60 h-full">
-      <ParticlesContainer />
-      <h1>Home</h1>
-    </div>
+    <div>HomePage</div>
   )
 }
 
-export default Home
+export default HomePage
