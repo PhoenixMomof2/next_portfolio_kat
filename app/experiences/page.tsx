@@ -6,7 +6,7 @@ import Experience from '../components/Experience'
 
 const Experiences = () => {
   return (
-    <div>
+    <div className="page">
       <Education />
       <Experience />
     </div>

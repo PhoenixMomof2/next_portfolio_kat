@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 
 // work slider data
 export const workSlider = {
@@ -55,7 +55,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 // import required modules
-import Pagination  from 'swiper';
+import { Pagination }  from 'swiper/modules';
 
 // icons
 import { BsArrowRight } from 'react-icons/bs';

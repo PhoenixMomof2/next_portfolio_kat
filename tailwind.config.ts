@@ -38,6 +38,11 @@ const config: Config = {
       },
     },
   },
+  container: {
+    padding: {
+      DEFAULT: '15px',
+    },
+  },
   plugins: [require('tailwind-scrollbar')],
 };
 export default config

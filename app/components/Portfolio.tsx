@@ -1,85 +1,43 @@
 import React from 'react'
 import Section from '../components/Section'
 import { FaGitSquare, FaExternalLinkSquareAlt} from 'react-icons/fa'
-import p1 from '../../public/project.jpeg'
-import p2 from '../../public/project.jpeg'
-import p3 from '../../public/project.jpeg'
-import p4 from '../../public/project.jpeg'
-import p5 from '../../public/project.jpeg'
-import p6 from '../../public/project.jpeg'
-import p7 from '../../public/project.jpeg'
-import p8 from '../../public/project.jpeg'
-import p9 from '../../public/project.jpeg'
+import p1 from '../../public/B-Clever.jpg'
+import p2 from '../../public/Awaken.jpg'
+import p3 from '../../public/HungerSmash.jpg'
+import p4 from '../../public/Hogwarts-ish.jpg'
 import Image from 'next/image';
 
 const Portfolio = () => {
 
   const projects = [
     { 
-      id: 1, 
+      id: 1,     
       image: p1,
-      title: "TV Show Search", 
-      github: "https://github.com/PhoenixMomof2/TVShowSearchApp.git",
-      demo: "https://youtu.be/owoN-BG4y60", 
+      title: "B-Clever", 
+      github: "https://github.com/PhoenixMomof2/B-Clever.git",
+      demo: "", 
     },
     {
       id: 2, 
       image: p2,
-      title: "Hunger Smash", 
-      github: "https://github.com/PhoenixMomof2/hunger-smash.git",
-      demo: "https://youtu.be/GYz5dWCB_yQ", 
-    },
-    {
-      id: 3, 
-      image: p3,
-      title: "Hogwarts-ish", 
-      github: "https://github.com/PhoenixMomof2/Hogwarts-ish.git",
-      demo: "https://youtu.be/Lpn5gzCd7Cs", 
-    },
-    {
-      id: 4, 
-      image: p4,
       title: "Awaken", 
       github: "https://github.com/PhoenixMomof2/AwakenBookClub.git",
       demo: "https://youtu.be/myubSd26GxA",  
     },
     {
-      id: 5, 
-      image: p5,
-      title: "B-Clever", 
-      github: "https://github.com/PhoenixMomof2/B-Clever.git",
-      demo: "", 
-     
+      id: 3, 
+      image: p3,
+      title: "Hunger Smash", 
+      github: "https://github.com/PhoenixMomof2/hunger-smash.git",
+      demo: "https://youtu.be/GYz5dWCB_yQ", 
     },
     {
-      id: 6, 
-      image: p6,
-      title: "Clever Munchkins", 
-      github: "https://github.com/PhoenixMomof2/clever-munchkins-app.git",
-      demo: "", 
-    },    
-    {
-      id: 7, 
-      image: p7,
-      title: "RecipeApp", 
-      github: "https://github.com/PhoenixMomof2/Portfolio.git",
-      demo: "https://youtu.be/myubSd26GxA",  
-    },
-    {
-      id: 8, 
-      image: p8,
-      title: "Portfolio", 
-      github: "https://github.com/PhoenixMomof2/Portfolio.git",
-      demo: "", 
-     
-    },    
-    {
-      id: 9, 
-      image: p9,
-      title: "Fitness Blog Site", 
-      github: "https://github.com/PhoenixMomof2/KandisArzu-Thompson_Portfolio.git",
-      demo: "", 
-    },    
+      id: 4, 
+      image: p4,
+      title: "Hogwarts-ish", 
+      github: "https://github.com/PhoenixMomof2/Hogwarts-ish.git",
+      demo: "https://youtu.be/Lpn5gzCd7Cs", 
+    }
   ]
 
   return (

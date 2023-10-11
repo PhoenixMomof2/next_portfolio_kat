@@ -1,9 +1,12 @@
 import React from 'react'
+import Portfolio from '../components/Portfolio'
 
-const ProjectsPage = () => {
+const page = () => {
   return (
-    <div>ProjectsPage</div>
+    <div>
+      <Portfolio/>
+    </div>
   )
 }
 
-export default ProjectsPage
+export default page

@@ -8,6 +8,8 @@ import {
   HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
+  HiDocumentDuplicate,
+  HiMiniPresentationChartLine
 } from 'react-icons/hi2';
 
 // nav data
@@ -16,6 +18,8 @@ export const navData: NavItem[] = [
   { name: 'about', path: '/about', icon: <HiUser /> },
   { name: 'projects', path: '/projects', icon: <HiRectangleGroup /> },
   { name: 'experiences', path: '/experiences', icon: <HiViewColumns /> },
+  { name: 'services', path: '/services', icon: <HiMiniPresentationChartLine /> },
+  { name: 'blogs', path: '/blogs', icon: <HiDocumentDuplicate /> },
   {
     name: 'testimonials',
     path: '/testimonials',
@@ -46,7 +50,7 @@ const Nav: React.FC = () => {
   return (
     <nav className="fixed flex flex-col items-center xl:justify-center gap-y-4 h-max bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen">
       {/* Inner */}
-      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[80px] xl:h-max py-8 bg-white/5 backdrop-blur-sm text-3xl xl:text-xl xl: rounded-full">
+      <div className="flex w-full xl:flex-col items-center justify-between xl:justify-center gap-y-10 px-4 md:px-40 xl:px-0 h-[100px] xl:h-max py-8 bg-white/5 backdrop-blur-sm text-3xl xl:text-xl xl: rounded-full">
         {navData.map((link, index) => {
           return( 
           <Link 
@@ -62,7 +66,7 @@ const Nav: React.FC = () => {
                   <div className="border-solid border-l-white border-l-8 border-y-transparent border-y-[6px] border-r-0 absolute -right-2"></div>
                 </div>
               </div>
-            <div>
+            <div className="font-bold ">
             {/* icons */}
               {link.icon}
             </div>

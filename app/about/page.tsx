@@ -7,7 +7,7 @@ import {motion} from 'framer-motion'
 import {fadeIn} from '../variants'
 import CountUp from 'react-countup'
 import Image from 'next/image';
-import profile from '../../public/recentpic.jpeg'
+import profile from '../../public/nobg_profile.jpeg'
 
 const About: React.FC = () => {
   const [index, setIndex] =  useState(0)

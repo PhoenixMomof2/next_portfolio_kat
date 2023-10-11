@@ -1,4 +1,4 @@
-import circle_text from '../../public/circle_text.png'
+import circle_text from '../../public/rounded-text.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { HiArrowRight } from 'react-icons/hi2'
@@ -6,7 +6,7 @@ import { HiArrowRight } from 'react-icons/hi2'
 const HIre = () => {
   return (
     <div className="mx-auto xl:mx-0">      
-        <Link href="/contact" className="flex relative w-[185px] h-[185px] items-center justify-center bg-circleStar bg-cover bg-center bg-no-repeat group">
+        <Link href="/projects" className="flex relative w-[185px] h-[185px] items-center justify-center bg-circleStar bg-cover bg-center bg-no-repeat group">
           <Image
           priority
           width={200}
