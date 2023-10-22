@@ -24,7 +24,7 @@
   }
 
   .page {
-    @apply w-full h-screen overflow-scroll;
+    @apply w-full h-screen overflow-auto;
   }
 
   .h1 {

@@ -11,78 +11,63 @@ import blog3 from "../../public/blog3.png";
 import blog4 from "../../public/blog4.png";
 import blog5 from "../../public/blog5.png";
 import blog6 from "../../public/blog6.png";
-import { } from "typescript";
 
 const FramerImage = motion(Image);
 
-// const MovingImg: React.FC<{ title: string; img: StaticImageData; link: string; }> = ({
-//   title,
-//   img,
-//   link
-// }) => {
-//   const x = useMotionValue(0);
-//   const y = useMotionValue(0);
-//   const imgRef = useRef(null);
+const MovingImg: React.FC<{ title: string; img: StaticImageData; link: string; }> = ({
+  title,
+  img,
+  link
+}) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const imgRef = useRef<HTMLDivElement | null>(null);
 
-//   function handleMouse(event: any) {
-//     if (imgRef.current) imgRef.current.style.display = "inline-block";
-//     x.set(event.pageX);
-//     y.set(-150);
-//   }
+  function handleMouse(event: any) {
+    if (imgRef.current) imgRef.current.style.display = "inline-block";
+    x.set(event.pageX);
+    y.set(-150);
+  }
 
-//   function handleMouseLeave(event: any) {
-//     if (imgRef.current) imgRef.current.style.display = "none";
-//     x.set(0);
-//     y.set(0);
-//   }
+  function handleMouseLeave(event: any) {
+    if (imgRef.current) imgRef.current.style.display = "none";
+    x.set(0);
+    y.set(0);
+  }
 
-//   const divStyle = {
-//     x: x,
-//     y: y,
-//     initial: { opacity: 0 },
-//     whileInView: { opacity: 1, transition: { duration: 0.2 } }
-//   };
+  const divStyle = {
+    x: x,
+    y: y,
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1, transition: { duration: 0.2 } }
+  };
 
-//   return (
-//     <Link
-//       href={link}
-//       target="_blank"
-//       onMouseMove={handleMouse}
-//       onMouseLeave={handleMouseLeave}
-//     >
-//       <h2 className="capitalize text-xl font-semibold hover:underline">
-//         {title}
-//       </h2>
-//       <motion.div
-//         style={divStyle}
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
-//         ref={imgRef as any}
-//       >
-//         <Image
-//           src={img}
-//           alt={title}
-//           className="z-10 hidden absolute w-96 h-auto rounded-lg md:!hidden"
-//           priority
-//           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-//         />
-//       </motion.div>
-//       {/* <FramerImage
-//         style={divStyle}
-//         initial={{ opacity: 0 }}
-//         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
-//         ref={imgRef as any}
-//         src={img}
-//         alt={title}
-//         className="z-10 hidden absolute w-96 h-auto rounded-lg md:!hidden"
-//         priority
-//         sizes="(max-width: 768px) 100vw,
-//             (max-width: 1200px) 50vw,
-//             50vw"
-//       /> */}
-//     </Link>
-//   );
-// };
+  return (
+    <Link
+      href={link}
+      target="_blank"
+      onMouseMove={handleMouse}
+      onMouseLeave={handleMouseLeave}
+    >
+      <h2 className="capitalize text-xl font-semibold hover:underline">
+        {title}
+      </h2>     
+      <FramerImage
+        style={divStyle}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
+        ref={imgRef as any}
+        src={img}
+        alt={title}
+        className="z-10 hidden absolute w-96 h-auto rounded-lg md:!hidden"
+        priority
+        sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            50vw"
+      />
+    </Link>
+  );
+};
 
 const Blog: React.FC<{ img: StaticImageData; title: string; date: string; link: string }> = ({
   img,
@@ -95,11 +80,11 @@ const Blog: React.FC<{ img: StaticImageData; title: string; date: string; link: 
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className="relative w-full p-4 py-6 my-2 rounded-xl flex items-center 
+      className="relative w-[75%] p-4 py-6 my-2 rounded-xl flex 
         justify-between bg-white text-black first:mt-0 border border-solid border-black
         border-r-4 border-b-4 dark:border-white dark:bg-black dark:text-white sm:flex-col"
     >
-      {/* <MovingImg title={title} img={img} link={link} /> */}
+      <MovingImg title={title} img={img} link={link} />
       <span className="text-orange-600 text-lg font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm">
         {date}
       </span>
@@ -147,12 +132,12 @@ const FeaturedBlog: React.FC<{ img: StaticImageData; title: string; time: string
 
 const BlogsPage: React.FC = () => {
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-full bg-primary/30 pt-20 text-center xl:text-left">
           <AnimatedText
             text="Blogging To Solidify Knowledge!"
             className="mb-16 lg:!text-6xl sm:mb-8 sm:!text-5xl xs:!text-3xl"
           />
-          <ul className="grid grid-cols-2 gap-4 p-10">
+          <ul className="grid grid-cols-2 gap-8 px-10">
             <FeaturedBlog
               img={blog6}
               title="The Request-Response Cycle Adventure"

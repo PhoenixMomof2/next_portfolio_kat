@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <body className={`page text-white bg-primary bg-cover bg-no-repeat ${sora.variable} font-sora relative ${poppins.variable} font-poppins`} suppressHydrationWarning={true}>
+      <body className={`page text-white bg-primary  ${sora.variable} font-sora relative ${poppins.variable} font-poppins`} suppressHydrationWarning={true}>
         <Top_Left_Image />
         <Nav />  
           {children}

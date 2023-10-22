@@ -9,7 +9,7 @@ import ParticlesContainer from './components/ParticlesContainer'
 export default function Home() {
 
   return (  
-      <div className="bg-primary/60 w-full">
+      <div className="bg-primary/60 w-full max-h-screen">
       {/* text */}
         <div className="w-full h-full bg-gradient-to-t from-primary/10 via-black/30 to-black/10">
           <ParticlesContainer />
