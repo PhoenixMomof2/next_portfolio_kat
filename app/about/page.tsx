@@ -1,89 +1,114 @@
 'use client'
 
-import React, { useState } from 'react';
-import Avatar from '../components/Avatar';
+import React, { useState, useEffect, useRef } from 'react'
+import { FaLinkedin, FaDev, FaGitSquare } from 'react-icons/fa'
+import { AiOutlineMail } from 'react-icons/ai';
+const Typed  = require('typed.js');
 import Circles from '../components/Circles';
 import {motion} from 'framer-motion'
 import {fadeIn} from '../variants'
 import CountUp from 'react-countup'
 import Image from 'next/image';
+import phoenix from "../../public/phoenix.png"
 import profile from '../../public/nobg_profile.jpeg'
 
 const About: React.FC = () => {
+  const SOCIAL = [
+    {
+      id: 1, 
+      link: "https://www.linkedin.com/in/kandis-arzu-thompson/",
+      icon: <FaLinkedin />,
+    },
+    {
+      id: 2, 
+      link: "https://github.com/PhoenixMomof2",
+      icon: <FaGitSquare />,
+    },
+    {
+      id: 3, 
+      link: "https://dev.to/kandis",
+      icon: <FaDev />,
+    },
+    {
+      id: 4, 
+      link: "mailto:k.arzuthompson@gmail.com",
+      icon: <AiOutlineMail />,
+    },
+  ]
+
+  const el = useRef(null);
+
+  useEffect(() => {
+    if (el.current) {
+      const typed = new Typed(el.current, {
+        strings: [
+          '<i>a Software Engineer</i>.',
+          'a Full Stack Developer.',
+          'a Frontend Developer.',
+          'a Web Developer.',
+          'an EdTech Enthusiast.',
+          'a proud mother of 2.',
+          'YOUR new hire!',
+        ],
+        typeSpeed: 80,
+        backSpeed: 50,
+        loop: true,
+      });
+
+      return () => {
+        typed.destroy();
+      };
+    }
+  }, []);
+
   const [index, setIndex] =  useState(0)
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="h-screen bg-primary/30 text-center xl:text-left translate-z-0">
       <Circles />
-      {/* AVATAR IMG */}
-      <motion.div
-      variants={fadeIn({direction: 'right', delay: 0.2})}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      className="hidden xl:flex absolute bottom-0 -left-[370px]">
-        <Avatar />
-      </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
-        {/* TEXT AREA */}
-        <div className="flex-1 flex flex-col justify-center ">
-          <h2 className="h2">
-            Captivating <span className="text-accent">stories</span> birth magnificent designs.
-          </h2>
-          <p className="max-w-[500px} mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-lg font-semibold">
-            Two years ago, I enrolled in a software engineering boot camp and decided to bring my entrepreneurship journey in early childhood education to a close.  Since graduating in July of 2023, I have been freelancing as a web developer, up-skilling and pivoting my business into a tech startup venture, and looking for a full-time role to elevated my full-stack developer abilities.
-          </p>
-          {/* COUNTERS */}
-          <div className="hidden md:flex md:max-w-sl xl:max-w-none mx-auto xl:mx-0 mb-8">
-            <div className="flex flex-1 xl:gap-x-6 ">
-              {/* EXPERIENCES */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={2} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of experience</div>
-              </div>
-              {/* CLIENTS */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={5} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Satisfied clients</div>
-              </div>
-              {/* PROJECTS */}
-              <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Finished projects</div>
-              </div>
-              {/* AWARDS */}
-              <div className="relative flex-1 ">
-                {/* after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0 */}
-                <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Winning awards</div>
-              </div>
-            </div>  
-          </div>
-        </div>
+      <div className="container pt-16 mx-auto flex flex-col items-center xl:flex-row gap-x-2 px-16">
         {/* PROFILE PIC CARD */}                
-        <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-black bg-white p-8 dark:bg-black dark:border-white xl:col-span-4 md:order-1 md:col-span-8">
-              <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-black dark:bg-accent" />
-              <Image
-                src={profile}
-                alt="profile-pic"
-                className="w-full h-auto rounded-2xl"
-                width={500}
-                height={500}
-                priority
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
-              />
-            </div>           
-    </div>
+        <div className="w-1/2 relative h-max rounded-2xl border-2 border-solid border-black bg-white p-8 dark:bg-black dark:border-white xl:col-span-4 md:order-1 md:col-span-8">
+          <div className="absolute top-2 -right-3 -z-10 w-[101%] h-[103%] rounded-2xl bg-black dark:bg-accent" />
+          <Image
+            src={profile}
+            alt="profile-pic"
+            className="w-full h-auto rounded-2xl"
+            width={500}
+            height={500}
+            priority
+            sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          33vw"
+          />
+        </div>           
+        {/* TEXT AREA */}
+        <div className="w-1/2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
+          <div className="text-center items-center justify-center">
+          <p className="capitalize tracking-widest text-yellow-500">Hello <span className="animate-pulse font-bold text-xl">👋🏽</span>, welcome to my site. I'm ...</p>
+          <h1 className="py-4 text-3xl text-rose-600">Kandis <span className="text-gray-800 dark:text-white">Arzu-Thompson</span></h1>
+          <h2 className="py-3 text-medium mb-4">I am <span ref={el} className="text-yellow-500"/></h2>
+          <p className="pb-2 max-w-[70%] m-auto font-medium text-white">            
+          If under-promise and over-deliver were a woman, she’d look like me.  For over ten years, I’ve turned my dreams into reality as an entrepreneur first in the health and wellness industry and then in the area of early childhood education.  The common factor in both was my relentless pursuit of specialty certifications and continued learning.  As a full-stack developer, my tenacity is no different.  I am proficient in front-end and back-end development and if you are looking for a software engineer who is ready to scale herself to a position of notoriety and leadership, you’ve found her.
+          </p>
+          {/* social icons */}
+          <div className="flex items-center justify-evenly max-w-[330px] m-auto gap-8 py-4 text-3xl">
+            {SOCIAL.map(({id, link, icon}) => (
+              <div key={id} className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:text-rose-600 hover:scale-110">
+                <a 
+                href={link}                   
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cursor-pointer duration-300"
+                >
+                  {icon}
+                </a>
+              </div>
+            ))}
+          </div>
+          </div> 
+        </div>
+      </div>
     </div>
   )
 };

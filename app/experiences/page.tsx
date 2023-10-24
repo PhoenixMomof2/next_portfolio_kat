@@ -6,7 +6,7 @@ import Experience from '../components/Experience'
 
 const Experiences = () => {
   return (
-    <div className="page">
+    <div className="overflow-hidden">
       <Education />
       <Experience />
     </div>

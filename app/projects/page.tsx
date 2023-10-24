@@ -3,7 +3,7 @@ import Portfolio from '../components/Portfolio'
 
 const page = () => {
   return (
-    <div>
+    <div className="h-screen">
       <Portfolio/>
     </div>
   )

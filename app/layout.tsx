@@ -4,6 +4,7 @@ import './globals.css'
 import { Poppins, Sora } from 'next/font/google'
 import Nav from './components/Nav'
 import Top_Left_Image from './components/Top_Left_Image'
+import ParticlesContainer from './components/ParticlesContainer'
 
 const poppins = Poppins({ subsets: ['latin'], variable: '--font-poppins', weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']})
 
@@ -19,8 +20,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <html lang="en">
-      <body className={`page text-white bg-primary  ${sora.variable} font-sora relative ${poppins.variable} font-poppins`} suppressHydrationWarning={true}>
+      <body className={`text-white bg-primary  ${sora.variable} font-sora relative ${poppins.variable} font-poppins`} suppressHydrationWarning={true}>
         <Top_Left_Image />
+        <ParticlesContainer />
         <Nav />  
           {children}
         </body>

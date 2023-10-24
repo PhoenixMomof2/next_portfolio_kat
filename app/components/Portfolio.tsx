@@ -42,7 +42,7 @@ const Portfolio = () => {
 
   return (
     <Section title="Portfolio 🗒️" subtitle="These are all of the projects that I have created since learning to code.  Some of them have yet to be updated with my current skills.  Please be delicate with your critiques.">
-      <div id='portfolio' className="grid gap-8 lg:gap-14 lg:grid-cols-2">
+      <div id='portfolio' className="grid gap-8 lg:gap-14 lg:grid-cols-2 translate-z-0">
         {projects.map(({ id, image, title, github, demo }) => (
           <div 
           key={id} 

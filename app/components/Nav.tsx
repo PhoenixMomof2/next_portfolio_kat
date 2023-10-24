@@ -18,18 +18,17 @@ export const navData: NavItem[] = [
   { name: 'about', path: '/about', icon: <HiUser /> },
   { name: 'projects', path: '/projects', icon: <HiRectangleGroup /> },
   { name: 'experiences', path: '/experiences', icon: <HiViewColumns /> },
-  { name: 'services', path: '/services', icon: <HiMiniPresentationChartLine /> },
   { name: 'blogs', path: '/blogs', icon: <HiDocumentDuplicate /> },
-  {
-    name: 'testimonials',
-    path: '/testimonials',
-    icon: <HiChatBubbleBottomCenterText />,
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-    icon: <HiEnvelope />,
-  },
+  // {
+  //   name: 'testimonials',
+  //   path: '/testimonials',
+  //   icon: <HiChatBubbleBottomCenterText />,
+  // },
+  // {
+  //   name: 'contact',
+  //   path: '/contact',
+  //   icon: <HiEnvelope />,
+  // },
 ];
 
 // next link

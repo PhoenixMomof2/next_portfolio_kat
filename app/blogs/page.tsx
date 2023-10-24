@@ -132,7 +132,7 @@ const FeaturedBlog: React.FC<{ img: StaticImageData; title: string; time: string
 
 const BlogsPage: React.FC = () => {
   return (
-    <div className="h-full bg-primary/30 pt-20 text-center xl:text-left">
+    <div className="h-full bg-primary/30 pt-20 text-center xl:text-left mx-10">
           <AnimatedText
             text="Blogging To Solidify Knowledge!"
             className="mb-16 lg:!text-6xl sm:mb-8 sm:!text-5xl xs:!text-3xl"

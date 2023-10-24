@@ -39,7 +39,7 @@ const Details: React.FC<DetailsProps> = ({type, time, place, info}) => {
   const ref = useRef<HTMLLIElement | null>(null);
 
   return (
-    <li ref={ref} className="first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]">
+    <li ref={ref} className="my-6 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]">
       <LiIcon />
       <motion.div
       initial={{y:50}}
@@ -69,7 +69,7 @@ const Education: React.FC = () => {
   )
 
   return (
-    <div className="my-36">
+    <div className="my-32">
       <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">Education</h2>
 
       <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
