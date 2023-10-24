@@ -39,7 +39,7 @@ const About: React.FC = () => {
     if (el.current) {
       const typed = new Typed(el.current, {
         strings: [
-          '<i>a Software Engineer</i>.',
+          '&lt;i&gt;a Software Engineer&lt;/i&gt;.',
           'a Full Stack Developer.',
           'a Frontend Developer.',
           'a Web Developer.',
