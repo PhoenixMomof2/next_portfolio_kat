@@ -1,15 +1,12 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { FaLinkedin, FaDev, FaGitSquare } from 'react-icons/fa'
 import { AiOutlineMail } from 'react-icons/ai';
 const Typed  = require('typed.js');
 import Circles from '../components/Circles';
-import {motion} from 'framer-motion'
-import {fadeIn} from '../variants'
-import CountUp from 'react-countup'
 import Image from 'next/image';
-import phoenix from "../../public/phoenix.png"
+
 import profile from '../../public/nobg_profile.jpeg'
 
 const About: React.FC = () => {
@@ -60,8 +57,6 @@ const About: React.FC = () => {
       };
     }
   }, []);
-
-  const [index, setIndex] =  useState(0)
 
   return (
     <div className="h-screen bg-primary/30 text-center xl:text-left translate-z-0">
