@@ -39,7 +39,7 @@ const About: React.FC = () => {
     if (el.current) {
       const typed = new Typed(el.current, {
         strings: [
-          '&lt;i&gt;a Software Engineer&lt;/i&gt.',
+          'a Software Engineer',
           'a Full Stack Developer.',
           'a Frontend Developer.',
           'a Web Developer.',
@@ -80,7 +80,7 @@ const About: React.FC = () => {
         {/* TEXT AREA */}
         <div className="w-1/2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
           <div className="text-center items-center justify-center">
-          <p className="capitalize tracking-widest text-yellow-500">Hello <span className="animate-pulse font-bold text-xl">👋🏽</span>, welcome to my site. I'm ...</p>
+          <p className="capitalize tracking-widest text-yellow-500">Hello <span className="animate-pulse font-bold text-xl">👋🏽</span>, welcome to my site. I'm...</p>
           <h1 className="py-4 text-3xl text-rose-600">Kandis <span className="text-gray-800 dark:text-white">Arzu-Thompson</span></h1>
           <h2 className="py-3 text-medium mb-4">I am <span ref={el} className="text-yellow-500"/></h2>
           <p className="pb-2 max-w-[70%] m-auto font-medium text-white">            

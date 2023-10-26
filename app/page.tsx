@@ -45,10 +45,9 @@ export default function Home() {
                 </motion.div>
               </div>
               </div>
-          {/* image w-full h-screen */}     
             <div className="w-[1200px] h-full absolute right-0 bottom-0">
-              <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
               {/* bg img */}
+              <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div>
               {/* Avatar Img */}
               <motion.div 
               variants={fadeIn({direction: "up", delay: 0.5})} 

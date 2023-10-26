@@ -15,7 +15,7 @@ const LiIcon: React.FC = () => {
   )
 
   return (
-    <figure className="absolute left-0 stroke-black dark:stroke-orange-300" ref={htmlReference}>
+    <figure className="absolute left-0 stroke-black dark:stroke-yellow-400" ref={htmlReference}>
       <svg className="-rotate-90 md:w-[60px] md:h-[60px] xs:w-[40px] xs:h-[40px]" width="75" height="75" viewBox="0 0 100 100">
         <circle cx="75" cy="50" r="20" className="stroke-red-500 stroke-1 fill-none"/>
         <motion.circle cx="75" cy="50" r="20" className="stroke-[5px] fill-white/90"
@@ -39,7 +39,7 @@ const Details: React.FC<DetailsProps> = ({type, time, place, info}) => {
   const ref = useRef<HTMLLIElement | null>(null);
 
   return (
-    <li ref={ref} className="my-6 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]">
+    <li ref={ref} className="my-6 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%] h-[100px]">
       <LiIcon />
       <motion.div
       initial={{y:50}}
@@ -88,7 +88,7 @@ const Education: React.FC = () => {
               time="June 2022 - July 2023"
               place="Flatiron School"
               info="Completed an intensive software engineering program in full stack web development where I learned JavaScript, HTML, CSS, Ruby, React, Redux, PostgresSQL, Ruby, Rails, Sinatra, ActiveRecord, Git, Bootstrap and Tailwindcss. In addition, I regularly collaborated with cohort mates, contributing to the advancements and learning of myself and others on our journeys to become developers."
-              />                 
+              />                                
           </ul>
         
       </div>

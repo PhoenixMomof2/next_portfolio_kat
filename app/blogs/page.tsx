@@ -24,9 +24,11 @@ const MovingImg: React.FC<{ title: string; img: StaticImageData; link: string; }
   const imgRef = useRef<HTMLDivElement | null>(null);
 
   function handleMouse(event: any) {
-    if (imgRef.current) imgRef.current.style.display = "inline-block";
-    x.set(event.pageX);
-    y.set(-150);
+    if (imgRef.current) {
+      imgRef.current.style.display = "inline-block";
+      x.set(event.pageX);
+      y.set(-10);
+    }
   }
 
   function handleMouseLeave(event: any) {
@@ -34,13 +36,6 @@ const MovingImg: React.FC<{ title: string; img: StaticImageData; link: string; }
     x.set(0);
     y.set(0);
   }
-
-  const divStyle = {
-    x: x,
-    y: y,
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1, transition: { duration: 0.2 } }
-  };
 
   return (
     <Link
@@ -52,18 +47,18 @@ const MovingImg: React.FC<{ title: string; img: StaticImageData; link: string; }
       <h2 className="capitalize text-xl font-semibold hover:underline">
         {title}
       </h2>     
-      <FramerImage
-        style={divStyle}
+      <FramerImage 
+        style={{ x: x, y: y }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
         ref={imgRef as any}
         src={img}
         alt={title}
-        className="z-10 hidden absolute w-96 h-auto rounded-lg md:!hidden"
-        priority
-        sizes="(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            50vw"
+        className="z-10 w-96 h-auto hidden absolute rounded-lg md:hidden"
+        // priority
+        // sizes="(max-width: 768px) 100vw,
+        //     (max-width: 1200px) 50vw,
+        //     50vw"
       />
     </Link>
   );
@@ -80,7 +75,7 @@ const Blog: React.FC<{ img: StaticImageData; title: string; date: string; link: 
       initial={{ y: 200 }}
       whileInView={{ y: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
       viewport={{ once: true }}
-      className="relative w-[75%] p-4 py-6 my-2 rounded-xl flex 
+      className="relative w-[75%] p-4 py-6 my-2 rounded-xl flex
         justify-between bg-white text-black first:mt-0 border border-solid border-black
         border-r-4 border-b-4 dark:border-white dark:bg-black dark:text-white sm:flex-col"
     >
@@ -132,12 +127,13 @@ const FeaturedBlog: React.FC<{ img: StaticImageData; title: string; time: string
 
 const BlogsPage: React.FC = () => {
   return (
-    <div className="h-full bg-primary/30 pt-20 text-center xl:text-left mx-10">
+    // <div className="h-full bg-primary/30 py-16 text-center xl:text-left mx-10">
+      <div className="w-full mb-16 flex flex-col items-center justify-center py-16">
           <AnimatedText
             text="Blogging To Solidify Knowledge!"
             className="mb-16 lg:!text-6xl sm:mb-8 sm:!text-5xl xs:!text-3xl"
           />
-          <ul className="grid grid-cols-2 gap-8 px-10">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 px-32">
             <FeaturedBlog
               img={blog6}
               title="The Request-Response Cycle Adventure"
@@ -153,46 +149,46 @@ const BlogsPage: React.FC = () => {
               link="https://dev.to/kandis/where-to-now-code-school-14df"
             />
           </ul>
-          <h2 className="font-bold text-5xl w-full text-center my-16 mt-32 md:text-3xl">
+          <h2 className="font-bold text-4xl w-full text-center my-12 mt-32 sm:text-2xl md:text-2xl">
             All Blogs
           </h2>
-          <ul className="flex flex-col items-center relative">
-            <Blog
-              title="The Request-Response Cycle Adventure"
-              date="June 20, 2023"
-              img={blog6}
-              link="https://dev.to/kandis/the-request-response-cycle-adventure-bnk"
-            />
-            <Blog
-              title="Complex State Management"
-              img={blog5}
-              date="March 9, 2023"
-              link="https://dev.to/kandis/complex-state-management-22ae"
-            />
-            <Blog
-              title="Failing Is Funny: Code with humor and sweat the small stuff........it matters!"
-              img={blog4}
-              date="January 17, 2023"
-              link="https://dev.to/kandis/creating-query-methods-active-record-2na4"
-            />
-            <Blog
-              title="Creating & Passing Props"
-              img={blog3}
-              date="November 7, 2022"
-              link="https://dev.to/kandis/creating-passing-props-4bpf"
-            />
-            <Blog
-              title="Understanding Variable Scope"
-              img={blog2}
-              date="September 36, 2022"
-              link="https://dev.to/kandis/understanding-variable-scope-n2o"
-            />
-            <Blog
-              title="Where to now? ...Code School"
-              img={blog1}
-              date="August 28, 2022"
-              link="https://dev.to/kandis/where-to-now-code-school-14df"
-            />
+          <ul className="flex flex-col items-center relative w-full">
+              <Blog
+                title="The Request-Response Cycle Adventure"
+                date="June 20, 2023"
+                img={blog6}
+                link="https://dev.to/kandis/the-request-response-cycle-adventure-bnk"
+              />
+              <Blog
+                title="Complex State Management"
+                img={blog5}
+                date="March 9, 2023"
+                link="https://dev.to/kandis/complex-state-management-22ae"
+              />
+              <Blog
+                title="Failing Is Funny: Code with humor and sweat the small stuff........it matters!"
+                img={blog4}
+                date="January 17, 2023"
+                link="https://dev.to/kandis/creating-query-methods-active-record-2na4"
+              />
+              <Blog
+                title="Creating & Passing Props"
+                img={blog3}
+                date="November 7, 2022"
+                link="https://dev.to/kandis/creating-passing-props-4bpf"
+              />
+              <Blog
+                title="Understanding Variable Scope"
+                img={blog2}
+                date="September 36, 2022"
+                link="https://dev.to/kandis/understanding-variable-scope-n2o"
+              />
+              <Blog
+                title="Where to now? ...Code School"
+                img={blog1}
+                date="August 28, 2022"
+                link="https://dev.to/kandis/where-to-now-code-school-14df"
+              />
           </ul>
         </div>
       
