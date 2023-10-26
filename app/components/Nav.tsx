@@ -9,7 +9,6 @@ import {
   HiChatBubbleBottomCenterText,
   HiEnvelope,
   HiDocumentDuplicate,
-  HiMiniPresentationChartLine
 } from 'react-icons/hi2';
 
 // nav data
@@ -19,11 +18,11 @@ export const navData: NavItem[] = [
   { name: 'projects', path: '/projects', icon: <HiRectangleGroup /> },
   { name: 'experiences', path: '/experiences', icon: <HiViewColumns /> },
   { name: 'blogs', path: '/blogs', icon: <HiDocumentDuplicate /> },
-  // {
-  //   name: 'testimonials',
-  //   path: '/testimonials',
-  //   icon: <HiChatBubbleBottomCenterText />,
-  // },
+  {
+    name: 'testimonials',
+    path: '/testimonials',
+    icon: <HiChatBubbleBottomCenterText />,
+  },
   {
     name: 'contact',
     path: '/contact',
