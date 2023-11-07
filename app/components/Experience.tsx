@@ -39,7 +39,7 @@ const Details: React.FC<DetailsProps> = ({position, company, companyLink, time, 
   const ref = useRef<HTMLLIElement | null>(null);
 
   return (
-  <li ref={ref} className="my-6 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%] h-[100px]">
+  <li ref={ref} className="my-6 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]">
       <LiIcon />
       <motion.div
       initial={{y:50}}
