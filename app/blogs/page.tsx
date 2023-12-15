@@ -80,7 +80,7 @@ const Blog: React.FC<{ img: StaticImageData; title: string; date: string; link: 
         border-r-4 border-b-4 dark:border-white dark:bg-black dark:text-white sm:flex-col"
     >
       <MovingImg title={title} img={img} link={link} />
-      <span className="text-orange-600 text-lg font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm">
+      <span className="text-orange-600 font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm">
         {date}
       </span>
     </motion.li>

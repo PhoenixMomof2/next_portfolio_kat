@@ -62,6 +62,7 @@ const About: React.FC = () => {
     <div className="h-screen bg-primary/30 text-center xl:text-left translate-z-0">
       <Circles />
       <div className="container pt-16 mx-auto flex flex-col items-center xl:flex-row gap-x-2 px-16">
+        
         {/* PROFILE PIC CARD */}                
         <div className="w-1/2 relative h-max rounded-2xl border-2 border-solid border-black bg-white p-8 dark:bg-black dark:border-white xl:col-span-4 md:order-1 md:col-span-8">
           <div className="absolute top-2 -right-3 -z-10 w-[101%] h-[103%] rounded-2xl bg-black dark:bg-accent" />
@@ -76,7 +77,8 @@ const About: React.FC = () => {
           (max-width: 1200px) 50vw,
           33vw"
           />
-        </div>           
+        </div>  
+                
         {/* TEXT AREA */}
         <div className="w-1/2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row xl:items-center md:order-3">
           <div className="text-center items-center justify-center">
@@ -103,6 +105,7 @@ const About: React.FC = () => {
           </div>
           </div> 
         </div>
+
       </div>
     </div>
   )

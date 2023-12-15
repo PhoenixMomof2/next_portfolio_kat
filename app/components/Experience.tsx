@@ -1,7 +1,5 @@
 import React, { useRef } from 'react'
 import { useScroll, motion } from "framer-motion"
-// import LiIcon from './LiIcon'
-
 
 const LiIcon: React.FC = () => {
   const htmlReference = useRef<HTMLElement | null>(null);
@@ -26,6 +24,7 @@ const LiIcon: React.FC = () => {
     </figure>
   )
 }
+
 interface DetailsProps {
   position: string;
   company: string;
@@ -39,7 +38,7 @@ const Details: React.FC<DetailsProps> = ({position, company, companyLink, time, 
   const ref = useRef<HTMLLIElement | null>(null);
 
   return (
-  <li ref={ref} className="my-6 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%] h-[100px]">
+  <li ref={ref} className="my-6 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]">
       <LiIcon />
       <motion.div
       initial={{y:50}}
@@ -67,13 +66,13 @@ const Experience: React.FC = () => {
   const {scrollYProgress} = useScroll(
     {
       target: ref,
-      offset: ["start center", "center center"]
+      offset: ["start end", "center start"]
     }
   )
 
   return (
-    <div className="my-32">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center  md:text-6xl xs:text-4xl md:mb-16">Experience</h2>
+    <div className="my-16">
+      <h2 className="font-bold text-6xl mb-32 w-full text-center sm:text-2xl xs:text-2xl md:mb-16">Experience</h2>
 
       <div ref={ref} className="w-[75%] mx-auto relative lg:w-[90%] md:w-full">
         <motion.div style={{scaleY: scrollYProgress}} 
@@ -81,16 +80,16 @@ const Experience: React.FC = () => {
 
           <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">   
               <Details 
-              position="Owner & Family Child Care Provider"
+              position="Website & Full-Stack Application Developer"
               company="Clever Munchkins LLC "
               companyLink="https://www.clevermunchkinsllc.com"
-              time="July 2017 - June 2022"
-              address="Waldorf, MD"
+              time="June 2022 - present"
+              address="remote"
               work="Created an invigorating STEAM curriculum that resulted in over 75% of program attendees beginning kindergarten with advance educational milestones in reading and mathematics
               Implemented holistic behavior management techniques and encouraged conflict resolution strategies to promote positive discipline and encourage empathetic social skills
               "/>   
               <Details 
-              position="Owner & Family Child Care Provider"
+              position="CEO, Owner & Family Child Care Provider"
               company="Clever Munchkins LLC "
               companyLink="https://www.clevermunchkinsllc.com"
               time="July 2017 - June 2022"
@@ -118,7 +117,7 @@ const Experience: React.FC = () => {
               position="Parent Volunteer"
               company="Silverbrook Elementary School"
               companyLink="https://www.fcps.edu"
-              time="June 2011 - June 2017"
+              time="Aug 2022 - present"
               address="Fairfax Station, VA"
               work="Giving assistance to educators and administrative staff by volunteering time to help with critical-thinking skills workshops, cultural events, math and reading events, teacher appreciation events, fundraising, extracurricular activities, and tutoring." />  
               <Details 

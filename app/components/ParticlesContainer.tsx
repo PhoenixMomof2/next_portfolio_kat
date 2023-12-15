@@ -1,4 +1,3 @@
-// import { Container } from 'postcss';
 import React, { useCallback } from 'react'
 import {Particles} from "react-tsparticles";
 import { loadFull } from "tsparticles"; 
@@ -6,7 +5,6 @@ import { loadFull } from "tsparticles";
  const ParticlesContainer = () => {
 
   const particlesInit = useCallback(async (engine: any) => {
-    console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
@@ -15,13 +13,12 @@ import { loadFull } from "tsparticles";
 }, []);
 
 const particlesLoaded = useCallback(async (container: any) => {
-    await console.log(container);
+    await container;
 }, []);
 
   return (
     <Particles 
     className="w-full h-full absolute translate-z-0"
-    // w-full h-full absolute translate-z-0
     id="tsparticles" 
     init ={particlesInit} 
     loaded={particlesLoaded}

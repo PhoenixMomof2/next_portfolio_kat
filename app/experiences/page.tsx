@@ -7,8 +7,10 @@ import Experience from '../components/Experience'
 const Experiences = () => {
   return (
     <div className="overflow-hidden">
-      <Education />
-      <Experience />
+      <div className="flex w-full flex-col items-center justify-center">
+        <Education />
+        <Experience />
+      </div>
     </div>
   )
 }
